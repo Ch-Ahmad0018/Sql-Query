@@ -1,0 +1,67 @@
+CREATE TABLE TEACHER (
+    ID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Age INT,
+    Grade CHAR(1)
+);
+DROP TABLE TEACHER;
+
+INSERT INTO TEACHER
+VALUES
+    (1,'John', 'Doe', 18, 'A'),
+    (2,'Jane', 'Smith', 19, 'B'),
+    (3,'Michael', 'Johnson', 20, 'B'),
+    (4,'Emily', 'Brown', 18, 'A'),
+    (5,'David', 'Williams', 19, 'C');
+	SELECT * FROM TEACHER;
+	CREATE TABLE SCHOOL (
+    ID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Age INT,
+    Grade CHAR(1)
+);
+DROP TABLE SCHOOL;
+
+INSERT INTO SCHOOL
+VALUES
+    (3,'AHMAD', 'Doe', 18, 'A'),
+    (4,'HERO', 'Smith', 19, 'B'),
+    (5,'SANG', 'Johnson', 20, 'B'),
+    (6,'Em', 'Brown', 18, 'A'),
+    (7,'Da', 'Williams', 19, 'C');
+	SELECT * FROM SCHOOL;
+	--INNER JOIN
+	SELECT * FROM TEACHER AS T
+	INNER JOIN SCHOOL AS S
+	ON T.ID=S.ID;
+	--LEFT JOIN
+	SELECT * FROM TEACHER AS T
+	LEFT JOIN SCHOOL AS S
+	ON T.ID=S.ID;
+	--RIGHT JOIN
+	SELECT * FROM TEACHER AS T
+    RIGHT JOIN SCHOOL AS S
+	ON T.ID=S.ID;
+	SELECT * FROM TEACHER AS T 
+	LEFT JOIN SCHOOL AS S
+	ON T.ID=S.ID
+	UNION
+	SELECT * FROM TEACHER AS T 
+	RIGHT JOIN SCHOOL AS S
+	ON T.ID=S.ID;
+	SELECT * FROM TEACHER AS T 
+	LEFT JOIN SCHOOL AS S
+	ON T.ID=S.ID
+	WHERE S.ID IS NOT NULL AND T.ID IS NOT NULL;
+	SELECT * FROM TEACHER AS T 
+	RIGHT JOIN SCHOOL AS S
+	ON T.ID=S.ID
+	WHERE S.ID IS NULL;
+	
+
+
+
+
+	
